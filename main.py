@@ -9,10 +9,18 @@ def load_data():
     return data
     
 
+@app.get("/")
+async def hello():
+    return {"message":"hello"}
 
-# @app.get("/view")
-# async def view():
-#     return load_data()
+
+@app.get("/about")
+async def about():
+    return {"message":"THis is muhammad aafaq how can i help you "}
+
+@app.get("/view")
+async def view():
+    return load_data()
 
 @app.get("/patient/{patient_id}")
 async def patient_record(patient_id):
